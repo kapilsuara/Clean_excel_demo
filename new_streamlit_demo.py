@@ -7,6 +7,11 @@ Features:
 - Code generation with retry logic
 - Data quality scoring
 - Automatic re-cleaning if quality is low
+
+Configuration:
+- Uses Streamlit secrets for deployment (st.secrets)
+- API keys should be configured in Streamlit Cloud dashboard or .streamlit/secrets.toml
+- No dotenv dependency required for production deployment
 """
 
 import streamlit as st
@@ -23,14 +28,10 @@ from pathlib import Path
 import tempfile
 from typing import Dict, List, Any, Tuple, Optional
 from io import BytesIO
-from dotenv import load_dotenv
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# Load environment variables from .env file
-load_dotenv(override=True)
 
 # Import custom modules
 from ai_service import make_ai_call, get_ai_service

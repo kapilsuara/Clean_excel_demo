@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pandas
+openpyxl
+numpy
+anthropic
+streamlit
+pydantic
+aiofiles
+boto3
+botocore
